@@ -53,6 +53,14 @@ document.addEventListener('DOMContentLoaded', async () => {
     };
     updateLogos();
 
+    // Update all logo images in the DOM
+    const updateLogos = () => {
+        document.querySelectorAll('img[src="logo.jpeg"], img[alt*="Logo"]').forEach(img => {
+            img.src = LOGO_BASE64;
+        });
+    };
+    updateLogos();
+
     const tableBody = document.getElementById('inventory-body');
     const totalItemsEl = document.getElementById('total-items');
     const reviewedItemsEl = document.getElementById('reviewed-items');
@@ -1669,4 +1677,5 @@ INSTRUCCIONES ABSOLUTAS:
     checkSession(); // Added to trigger auth check on load
 
 }); // End of DOMContentLoaded
+
 
