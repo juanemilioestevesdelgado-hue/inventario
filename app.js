@@ -48,6 +48,8 @@ document.addEventListener('DOMContentLoaded', async () => {
         document.querySelectorAll('img[src="logo.jpeg"], img[alt*="Logo"]').forEach(img => {
             img.src = LOGO_BASE64;
         });
+        const favicon = document.querySelector('link[rel="icon"]');
+        if (favicon) favicon.href = LOGO_BASE64;
     };
     updateLogos();
 
